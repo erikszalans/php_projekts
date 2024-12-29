@@ -1,0 +1,199 @@
+/* General Reset */
+body, h1, h2, h3, p, a {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Reviews Container */
+.reviews-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fefefe;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+/* Return Button Styling */
+.back-to-index {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #5c3623; /* Dark brown */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-index:hover {
+    background-color: #ad8a34; /* Gold */
+}
+
+/* Review Form */
+.review-form {
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.review-form label {
+    font-weight: bold;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+    resize: vertical;
+}
+
+.review-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+    width: 100%;
+}
+
+.review-form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Review Card */
+.review-card {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.review-card h3 {
+    font-size: 18px;
+    color: #555;
+}
+
+.review-card .rating-stars {
+    color: gold;
+    font-size: 16px;
+}
+
+.review-card p {
+    font-size: 14px;
+    color: #666;
+    margin: 0;
+}
+
+/* Statistics Section */
+.statistics {
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.statistics h2 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.statistics p {
+    font-size: 14px;
+    margin: 5px 0;
+}
+
+/* Pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.pagination a {
+    display: inline-block;
+    padding: 8px 12px;
+    background-color: #5c3623; /* Dark brown */
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a.active {
+    background-color: #ad8a34; /* Gold */
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ad8a34; /* Gold */
+}
+
+/* Rating Stars */
+.stars {
+    display: flex;
+    gap: 5px;
+}
+
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars label {
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.stars input[type="radio"]:checked ~ label {
+    color: gold; /* Highlight stars when selected */
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    /* Reviews Container */
+    .reviews-container {
+        padding: 10px;
+        margin: 10px;
+    }
+
+    /* Form Inputs */
+    .review-form textarea,
+    .review-form button[type="submit"] {
+        width: 100%;
+    }
+
+    /* Pagination */
+    .pagination {
+        flex-direction: column;
+        align-items: center;
+    }
+}

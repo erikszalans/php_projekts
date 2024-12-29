@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="lv">
 <head>
@@ -16,21 +19,31 @@
         <div class="header-icons">
             <a href="#" class="icon-link"><img src="visual/images/heart-icon-black.png" alt="Patīk"></a>
             <a href="#" class="icon-link"><img src="visual/images/cart-icon-black.png" alt="Grozs"></a>
-            <a href="#" class="icon-link"><img src="visual/images/cart-icon-black.png" alt="Reģistrēties"></a>
+            <?php if (isset($_SESSION['username'])): ?>
+                <div class="icon-link dropdown">
+                    <img src="visual/images/user-icon-black.png">
+                    <span><?php echo $_SESSION['username']; ?></span>
+                    <div class="dropdown-menu">
+                        <a href="logout.php">Izrakstīties</a>
+                    </div>
+                </div>
+            <?php else: ?>
+                <div class="auth-links">
+                    <a href="login.php" class="icon-link">
+                        <img src="visual/images/user-icon-black.png" alt="Pieslēgties">
+                    </a>
+                </div>
+            <?php endif; ?>
         </div>
     </header>
     <!-- Navigation Menu -->
     <nav class="nav-bar">
         <ul class="nav-links">
             <li class="nav-item dropdown">
-                <a href="#" class="dropdown-toggle">Kāzu kleitas</a>
-                <ul class="dropdown-menu">
-                    <li><a href="#">Rosa Clara</a></li>
-                    <li><a href="#">San Patrick</a></li>
-                </ul>
+                <a href="products.php" class="dropdown-toggle">Kāzu kleitas</a>
             </li>
             <li class="nav-item"><a href="#">Rezervācija</a></li>
-            <li class="nav-item"><a href="#">Atsauksmes</a></li>
+            <li class="nav-item"><a href="review.php">Atsauksmes</a></li>
             <li class="nav-item"><a href="#">Profils</a></li>
         </ul>
     </nav>

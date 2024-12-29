@@ -109,3 +109,194 @@ body, h1, h2, h3, p, ul, li, a {
 .dropdown-menu li a:hover {
     color: #ad8a34; /* Gold hover color */
 }
+/* Dropdown Styling */
+.icon-link.dropdown {
+    position: relative;
+    cursor: pointer;
+}
+
+.icon-link.dropdown .dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #ffffff;
+    border: 1px solid #5c3623; /* Dark brown border */
+    border-radius: 5px;
+    z-index: 10;
+    padding: 10px;
+}
+
+.icon-link.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.icon-link.dropdown .dropdown-menu a {
+    display: block;
+    padding: 5px 10px;
+    color: #5c3623; /* Dark brown text */
+    text-decoration: none;
+}
+
+.icon-link.dropdown .dropdown-menu a:hover {
+    background-color: #f0f0f0;
+}
+.auth-links {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.auth-links .icon-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    color: #5c3623;
+}
+
+.register-link {
+    text-decoration: none;
+    color: #5c3623;
+    font-size: 14px;
+}
+
+.register-link:hover {
+    color: #ad8a34;
+}
+
+/* General Styling for Reviews */
+.reviews-container {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 10px;
+    background: #fefefe;
+}
+
+/* Individual Review Card */
+.review-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 15px;
+    background: #f9f9f9;
+}
+
+.review-card h3 {
+    font-size: 18px;
+    margin-bottom: 5px;
+    text-transform: capitalize;
+    color: #444;
+}
+
+.review-card p {
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Stars Display for Existing Reviews */
+.rating-stars {
+    color: #FFD700; /* Gold for stars */
+    font-size: 20px;
+}
+
+/* Review Form */
+.review-form {
+    margin-bottom: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background: #ffffff;
+}
+
+.review-form label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.review-form button[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.review-form button[type="submit"]:hover {
+    background-color: #45a049;
+}
+
+/* Interactive Star Rating */
+.stars {
+    display: flex;
+    gap: 5px;
+    margin-bottom: 15px;
+}
+
+.stars input[type="radio"] {
+    display: none;
+}
+
+.stars label {
+    font-size: 2rem;
+    color: #ccc;
+    cursor: pointer;
+}
+
+.stars label:hover,
+.stars label:hover ~ label {
+    color: #FFD700; /* Highlight on hover */
+}
+
+.stars input[type="radio"]:checked ~ label {
+    color: #FFD700; /* Gold for selected stars */
+}
+/* Return Button Styling */
+.back-to-index {
+    display: inline-block;
+    margin-bottom: 20px;
+    padding: 10px 15px;
+    background-color: #5c3623; /* Dark brown */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.back-to-index:hover {
+    background-color: #ad8a34; /* Gold */
+}
+
+/* Pagination Links */
+.pagination a {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background-color: #5c3623; /* Dark brown */
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.pagination a.active {
+    background-color: #ad8a34; /* Gold */
+}
+
+.pagination a:hover:not(.active) {
+    background-color: #ad8a34; /* Gold */
+}
