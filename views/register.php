@@ -10,7 +10,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = trim($_POST['password']);
     $confirm_password = trim($_POST['confirm_password']);
 
-    // Validations
+   
     if (empty($username)) {
         $errors[] = "Lietotājvārds ir nepieciešams";
     }
@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $errors[] = "Paroles nesakrīt";
     }
 
-    // If no errors, proceed to register user
+    
     if (empty($errors)) {
         $password_hash = password_hash($password, PASSWORD_BCRYPT);
 

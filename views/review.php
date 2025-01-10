@@ -1,6 +1,6 @@
 <?php
 session_start();
-require_once "../db/db.php"; // Savienojums ar datubāzi
+require_once "../db/db.php"; 
 
 // Ielogojies lietotājs?
 $isLoggedIn = isset($_SESSION['user_id']);
@@ -124,7 +124,6 @@ $totalPages = ceil($totalReviews / $reviewsPerPage);
 <a href="index.php">Atpakaļ uz sākumlapu</a>
     <h1>Klientu Atsauksmes</h1>
     <?php if ($isLoggedIn): ?>
-        <!-- Atsauksmes pievienošanas forma -->
         <form class="review-form" action="review.php" method="post">
             <label for="review">Jūsu atsauksme:</label>
             <textarea id="review" name="review" rows="4" minlength="15" required></textarea>
@@ -141,7 +140,6 @@ $totalPages = ceil($totalReviews / $reviewsPerPage);
         <p><a href="login.php">Ielogojieties</a>, lai pievienotu atsauksmi.</p>
     <?php endif; ?>
 
-    <!-- Parāda atsauksmes -->
     <?php foreach ($reviews as $review): ?>
         <div class="review-card">
             <h3><?= htmlspecialchars($review['username']) ?></h3>

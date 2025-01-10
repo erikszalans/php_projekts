@@ -13,7 +13,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         // Prepare and execute the SQL statement
         $stmt = $conn->prepare("SELECT * FROM users WHERE username = ?");
-        $stmt->bind_param("s", $username); // Correctly bind the username variable
+        $stmt->bind_param("s", $username); 
         $stmt->execute();
         $result = $stmt->get_result();
 
@@ -22,12 +22,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             // Verify password
             if (password_verify($password, $user['password'])) {
-                // Set session variables
+                
                 $_SESSION['user_id'] = $user['id'];
                 $_SESSION['username'] = $user['username'];
+                $_SESSION['role'] = $user['role']; // Store the user's role in the session
 
-                // Redirect to index.php
-                header("Location: ../views/index.php");
+                // Redirect based on role
+                if ($user['role'] === 'administrators') {
+                    header("Location: ../views/admin.php"); // Redirect admins to the admin page
+                } else {
+                    header("Location: ../views/index.php"); // Redirect regular users to the index page
+                }
                 exit();
             } else {
                 $errors[] = "Nepareizs lietotājvārds vai parole.";
